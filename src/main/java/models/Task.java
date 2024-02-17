@@ -8,12 +8,14 @@ public class Task {
     private String description;
     private static ArrayList<Task> instances = new ArrayList<>();
     private boolean completed;
+    private String title;
     private LocalDateTime createdAt;
     private int id;
 
-    public Task(String description){
+    public Task(String description, String title){
         this.description = description;
         this.completed = false;
+        this.title  = title;
         this.createdAt = LocalDateTime.now();
         instances.add(this);
         this.id = instances.size();
@@ -22,6 +24,8 @@ public class Task {
     public String getDescription() {
         return description;
     }
+
+    public String getTitle() { return  title ;}
 
     public static ArrayList<Task> getAll(){
         return instances;
