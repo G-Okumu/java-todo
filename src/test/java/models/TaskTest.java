@@ -32,14 +32,14 @@ public class TaskTest {
     @Test
     public void AllTasksAreCorrectlyReturned_true() throws Exception {
         Task task = setupNewTask();
-        Task otherTask = new Task("Brush the cat");
+        Task otherTask = new Task("Brush the cat", "Brushing");
         Assertions.assertEquals(2, Task.getAll().size());
     }
 
     @Test
     public void AllTasksContainsAllTasks_true() throws Exception {
         Task task = setupNewTask();
-        Task otherTask = new Task("Brush the cat");
+        Task otherTask = new Task("Brush the cat", "Brushing");
         Assertions.assertTrue(Task.getAll().contains(task));
         Assertions.assertTrue(Task.getAll().contains(otherTask));
     }
@@ -72,7 +72,7 @@ public class TaskTest {
     @Test
     public void findReturnsCorrectTaskWhenMoreThanOneTaskExists() throws Exception {
         Task task = setupNewTask();
-        Task otherTask = new Task("Brush the cat");
+        Task otherTask = new Task("Brush the cat", "Brushing");
         Assertions.assertEquals(2, Task.findById(otherTask.getId()).getId());
     }
 
@@ -93,7 +93,7 @@ public class TaskTest {
     @Test
     public void deleteDeletesASpecificTask() throws Exception {
         Task task = setupNewTask();
-        Task otherTask = new Task("Brush the cat");
+        Task otherTask = new Task("Brush the cat", "Brushing");
         task.deleteTask();
         Assertions.assertEquals(1, Task.getAll().size()); //one is left
         Assertions.assertEquals(Task.getAll().get(0).getId(), 2); //the one that was deleted has the id of 2
@@ -110,6 +110,6 @@ public class TaskTest {
 
     //helper methods
     public Task setupNewTask(){
-        return new Task("Mow the lawn");
+        return new Task("Mow the lawn", "Brushing");
     }
 }
