@@ -107,7 +107,6 @@ public class TaskTest {
     //     assertEquals(0, Task.getAll().size());
     // }
 
-
     //helper methods
     public Task setupNewTask(){
         return new Task("Mow the lawn", "Brushing");
