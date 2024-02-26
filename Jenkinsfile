@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools {
-        gradle Gradle-7
+        gradle "Gradle-7"
     }
     stages{
         stage('clone repo'){
